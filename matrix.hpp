@@ -6,9 +6,8 @@
 /***************************************************************************/
 /*********************DEFAULT CONTAINER CLASS  FOR MATRIX******************/
 template <typename T>
-class default_container
-{
-  public:
+class default_container {
+   public:
     std::vector<std::vector<T>> __array;
     std::size_t __size_x;
     std::size_t __size_y;
@@ -25,13 +24,11 @@ class default_container
     ~default_container() {}
     //------------------------------------------------------------------------//
     //-----------------------overloading operator ()--------------------------//
-    const T operator()(const std::size_t i, const std::size_t j) const
-    {
+    const T operator()(const std::size_t i, const std::size_t j) const {
         return __array[i][j];
     }
 
-    T &operator()(const std::size_t i, const std::size_t j)
-    {
+    T &operator()(const std::size_t i, const std::size_t j) {
         return __array[i][j];
     }
     //-----------------------------------------------------------------------//
@@ -46,10 +43,8 @@ default_container<T>::default_container(
 template <typename T>
 default_container<T>::default_container(
     const std::initializer_list<std::initializer_list<T>> &other)
-    : __size_x(other.size()), __size_y((*other.begin()).size())
-{
-    for (auto &it : other)
-    {
+    : __size_x(other.size()), __size_y((*other.begin()).size()) {
+    for (auto &it : other) {
         __array.push_back(it);
     }
 }
@@ -60,12 +55,11 @@ default_container<T>::default_container(
 /***************************************************************************/
 /*******************************MATRIX CLASS********************************/
 template <typename T, typename Type = default_container<T>>
-class matrix
-{
-  private:
+class matrix {
+   private:
     Type __MATRIX;
 
-  public:
+   public:
     // -----------------------Constructors------------------------------------//
     matrix(){};
     matrix(const std::size_t sx, const std::size_t sy) : __MATRIX(sx, sy) {}
@@ -81,12 +75,10 @@ class matrix
     //------------------------------------------------------------------------//
 
     //-----------------------overloading operator ()--------------------------//
-    T operator()(const std::size_t i, const std::size_t j) const
-    {
+    T operator()(const std::size_t i, const std::size_t j) const {
         return __MATRIX(i, j);
     }
-    T &operator()(const std::size_t i, const std::size_t j)
-    {
+    T &operator()(const std::size_t i, const std::size_t j) {
         return __MATRIX(i, j);
     }
     //------------------------------------------------------------------------//
@@ -102,8 +94,7 @@ class matrix
     const Type &data() const { return __MATRIX; }
     Type &data() { return __MATRIX; }
     // gitting dimentions of __MATRIX
-    std::pair<std::size_t, std::size_t> shape() const
-    {
+    std::pair<std::size_t, std::size_t> shape() const {
         return std::make_pair(__MATRIX.__size_x, __MATRIX.__size_y);
     }
     std::size_t sizex() const { return __MATRIX.__size_x; }
@@ -113,15 +104,12 @@ class matrix
 //--------------------------Matrix Assignment Body--------------------------//
 template <typename T, typename Type>
 template <typename T1, typename Type1>
-matrix<T, Type> &matrix<T, Type>::operator=(const matrix<T1, Type1> &other)
-{
+matrix<T, Type> &matrix<T, Type>::operator=(const matrix<T1, Type1> &other) {
     assert(shape() == other.shape());
     std::size_t tx = sizex();
     std::size_t ty = sizey();
-    for (std::size_t i = 0; i < tx; i++)
-    {
-        for (std::size_t j = 0; j < ty; j++)
-        {
+    for (std::size_t i = 0; i < tx; i++) {
+        for (std::size_t j = 0; j < ty; j++) {
             __MATRIX(i, j) = other(i, j);
         }
     }
@@ -130,14 +118,11 @@ matrix<T, Type> &matrix<T, Type>::operator=(const matrix<T1, Type1> &other)
 //--------------------------------------------------------------------------//
 //-----------------------overloading operator << --------------------------//
 template <typename T, typename F>
-std::ostream &operator<<(std::ostream &out, const matrix<T, F> &a)
-{
+std::ostream &operator<<(std::ostream &out, const matrix<T, F> &a) {
     std::size_t tx = a.sizex();
     std::size_t ty = a.sizey();
-    for (size_t i = 0; i < tx; i++)
-    {
-        for (size_t j = 0; j < ty; j++)
-        {
+    for (size_t i = 0; i < tx; i++) {
+        for (size_t j = 0; j < ty; j++) {
             out << a(i, j) << ' ';
         }
         out << std::endl;
@@ -151,9 +136,8 @@ std::ostream &operator<<(std::ostream &out, const matrix<T, F> &a)
 /***************************************************************************/
 /**********************MATRIX ADDITION CLASS********************************/
 template <typename T, typename R1, typename R2>
-class ADD
-{
-  public:
+class ADD {
+   public:
     const R1 &operand1;
     const R2 &operand2;
     std::size_t __size_x;
@@ -163,16 +147,14 @@ class ADD
           operand2(b),
           __size_x(operand1.__size_x),
           __size_y(operand1.__size_y) {}
-    T operator()(const std::size_t i, const std::size_t j) const
-    {
+    T operator()(const std::size_t i, const std::size_t j) const {
         return operand1(i, j) + operand2(i, j);
     }
 };
 //---------------Overloading Operator + for adding two MATRIX----------------/
 template <typename T, typename R1, typename R2>
 matrix<T, ADD<T, R1, R2>> operator+(matrix<T, R1> const &a,
-                                    matrix<T, R2> const &b)
-{
+                                    matrix<T, R2> const &b) {
     return matrix<T, ADD<T, R1, R2>>(ADD<T, R1, R2>(a.data(), b.data()));
 }
 /************************MATRIX ADDITION CLASS ENDS**************************/
