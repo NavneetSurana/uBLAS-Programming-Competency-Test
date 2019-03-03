@@ -160,4 +160,30 @@ matrix<T, ADD<T, R1, R2>> operator+(matrix<T, R1> const &a,
 /************************MATRIX ADDITION CLASS ENDS**************************/
 /***************************************************************************/
 
+/***************************************************************************/
+/**********************MATRIX SUBTRACTION CLASS*****************************/
+template <typename T, typename R1, typename R2>
+class SUB {
+   public:
+    const R1 &operand1;
+    const R2 &operand2;
+    std::size_t __size_x;
+    std::size_t __size_y;
+    SUB(const R1 &a, const R2 &b)
+        : operand1(a),
+          operand2(b),
+          __size_x(operand1.__size_x),
+          __size_y(operand1.__size_y) {}
+    T operator()(const std::size_t i, const std::size_t j) const {
+        return operand1(i, j) - operand2(i, j);
+    }
+};
+//------------Overloading Operator - for subtracting two MATRIX----------------/
+template <typename T, typename R1, typename R2>
+matrix<T, SUB<T, R1, R2>> operator-(matrix<T, R1> const &a,
+                                    matrix<T, R2> const &b) {
+    return matrix<T, SUB<T, R1, R2>>(SUB<T, R1, R2>(a.data(), b.data()));
+}
+/************************MATRIX SUBTRACTION CLASS ENDS*************************/
+/******************************************************************************/
 #endif
