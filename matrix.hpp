@@ -151,11 +151,19 @@ class ADD {
         return operand1(i, j) + operand2(i, j);
     }
 };
-//---------------Overloading Operator + for adding two MATRIX----------------/
+//---------------Defining Operator + for adding two MATRIX----------------/
 template <typename T, typename R1, typename R2>
 matrix<T, ADD<T, R1, R2>> operator+(matrix<T, R1> const &a,
                                     matrix<T, R2> const &b) {
+    assert(a.shape() == b.shape());
     return matrix<T, ADD<T, R1, R2>>(ADD<T, R1, R2>(a.data(), b.data()));
+}
+//---------------Defining Operator += for adding two MATRIX----------------/
+template <typename T, typename R1, typename R2>
+void operator+=(matrix<T, R1> &a, const matrix<T, R2> &b) {
+    assert(a.shape() == b.shape());
+    a = matrix<T, ADD<T, R1, R2>>(ADD<T, R1, R2>(a.data(), b.data()));
+    return;
 }
 /************************MATRIX ADDITION CLASS ENDS**************************/
 /***************************************************************************/
@@ -182,7 +190,15 @@ class SUB {
 template <typename T, typename R1, typename R2>
 matrix<T, SUB<T, R1, R2>> operator-(matrix<T, R1> const &a,
                                     matrix<T, R2> const &b) {
+    assert(a.shape() == b.shape());
     return matrix<T, SUB<T, R1, R2>>(SUB<T, R1, R2>(a.data(), b.data()));
+}
+//---------------Defining Operator -= for adding two MATRIX----------------/
+template <typename T, typename R1, typename R2>
+void operator-=(matrix<T, R1> &a, const matrix<T, R2> &b) {
+    assert(a.shape() == b.shape());
+    a = matrix<T, SUB<T, R1, R2>>(SUB<T, R1, R2>(a.data(), b.data()));
+    return;
 }
 /************************MATRIX SUBTRACTION CLASS ENDS*************************/
 /******************************************************************************/
