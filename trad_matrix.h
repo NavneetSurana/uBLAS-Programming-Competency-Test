@@ -20,7 +20,7 @@ private:
   sz_t size_y;
 
 public:
-   /**
+  /**
    * @brief      Constructs the object.
    */
   trad_matrix() : size_x(0), size_y(0) {}
@@ -32,7 +32,7 @@ public:
    */
   trad_matrix(const std::size_t &n, const std::size_t &m)
       : _array(n * m), size_x(n), size_y(m) {}
-      /**
+  /**
    * @brief      Constructs the object.
    *
    * @param[in]  n     Number of rows in the matrix
@@ -63,11 +63,11 @@ public:
       _array.insert(_array.begin(), it.begin(), it.end());
     }
   }
-   /**
+  /**
    * @brief      Gives the dimensions of the matrix
    */
   std::pair<sz_t, sz_t> shape() const { return std::make_pair(size_x, size_y); }
-/**
+  /**
    * Operator () Overloading for getting the (i,j)th element
    */
   inline const T operator()(const std::size_t i, const std::size_t j) const {
@@ -76,7 +76,7 @@ public:
   inline T &operator()(const std::size_t i, const std::size_t j) {
     return _array[i * size_y + j];
   }
-   /**
+  /**
    * @brief      Oveloading operator << to use std:: cout
    */
   friend std::ostream &operator<<(std::ostream &out, trad_matrix<T> &a) {
@@ -113,7 +113,7 @@ public:
     }
     return *this;
   }
-    /**
+  /**
    * @brief      Overloading operator == for a comparing equality with other
    *             matrix
    *
@@ -137,7 +137,7 @@ public:
     }
     return true;
   }
-   /**
+  /**
    * @brief      Operator + Overloading for Standard Matrix Addition
    *
    * @param[in]  other  reference to the matrix which is to be
@@ -203,7 +203,7 @@ public:
     }
     return temp;
   }
-   /**
+  /**
    * @brief      assignment after element-wise division
    */
   template <typename R1> void operator/=(const R1 &other) {
