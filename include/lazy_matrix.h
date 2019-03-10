@@ -1,8 +1,6 @@
 #pragma once
 #include <cassert>
-#include <exception>
 #include <iostream>
-#include <type_traits>
 #include <typeinfo>
 #include <vector>
 
@@ -96,11 +94,11 @@ public:
     if (k == 0) {
       return op1(i, k) * op2(k, j);
     } else {
-      return op1(i, k) * op2(k, j) + (_tmul<R1, R2>(op1, op2, k - 1))(i, j);
+      return op1(i, k) * op2(k, j) +
+             (_tmul<R1, R2>(op1, op2, k - 1)).operator()(i, j);
     }
   }
 };
-
 /**
  * @brief      Functor for getting (i,j)th element of Matrix-Matrix
  *             multiplication
@@ -108,8 +106,13 @@ public:
 struct _std_mul {
   template <typename R1, typename R2>
   decltype(auto) operator()(const R1 &op1, const R2 &op2, const sz_t &i,
-                            const sz_t &j) const {
-    return (_tmul<R1, R2>(op1, op2, op1.shape().second - 1))(i, j);
+                            const sz_t &j, sz_t k = 0) const {
+    if (k + 1 < op2.shape().second) {
+      return op1(i, k) * op2(k, j) +
+             (_tmul<R1, R2>(op1, op2, op2.shape().first - 1))(i, j);
+    } else {
+      return op1(i, k) * op2(k, j);
+    }
   }
 };
 
@@ -125,7 +128,7 @@ private:
   const R1 &op1;
   const R2 &op2;
   const sz_t size_x;
-  sz_t size_y;
+  const sz_t size_y;
   Op op;
 
 public:
@@ -137,7 +140,7 @@ public:
    * @param[in]  f     Functor for Operator
    */
   expr(const R1 &a, const R2 &b, Op f)
-      : op1(a), op2(b), size_x(a.shape().first), size_y(a.shape().second),
+      : op1(a), op2(b), size_x(a.shape().first), size_y(b.shape().second),
         op(f) {}
   /**
    * @brief      Gives the dimensions of the resultant expression
@@ -145,7 +148,7 @@ public:
    * @return     return a pair whose first value is the number of rows and the
    *             second value is the number of columns
    */
-  std::pair<sz_t, sz_t> shape() const { return std::make_pair(size_x, size_y); }
+  decltype(auto) shape() const { return std::make_pair(size_x, size_y); }
 
   /**
    * Operator + Overloading for Standard Matrix Addition
@@ -184,7 +187,6 @@ public:
    * Operator % Overloading for Standard Matrix Multiplication
    */
   template <typename F> decltype(auto) operator%(const F &other) {
-    size_y = op2.shape().second;
     assert(size_y == other.shape().second);
     return expr<expr<R1, R2, Op>, F, _std_mul>(*this, other, _std_mul());
   }
@@ -204,8 +206,8 @@ public:
 template <typename T> class lazy_matrix {
 private:
   std::vector<T> _array;
-  sz_t size_x;
-  sz_t size_y;
+  const sz_t size_x;
+  const sz_t size_y;
 
 public:
   /**
@@ -278,7 +280,7 @@ public:
   /**
    * @brief      Gives the dimensions of the matrix
    */
-  std::pair<sz_t, sz_t> shape() const { return std::make_pair(size_x, size_y); }
+  decltype(auto) shape() const { return std::make_pair(size_x, size_y); }
 
   /**
    * Operator () Overloading for getting the (i,j)th element
@@ -313,7 +315,7 @@ public:
    *
    * @tparam     R1     expression type or matrix type
    */
-  template <typename R1> void operator=(const R1 &other) {
+  template <typename R1> lazy_matrix operator=(const R1 &other) {
     assert(shape() == other.shape());
     lazy_matrix<T> temp(size_x, size_y);
     for (sz_t i = 0; i < size_x; i++) {
@@ -326,6 +328,7 @@ public:
         (*this)(i, j) = temp(i, j);
       }
     }
+    return *this;
   }
 
   /**

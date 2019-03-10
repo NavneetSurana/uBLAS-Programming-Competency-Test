@@ -6,6 +6,11 @@
 using _hrc = std::chrono::high_resolution_clock;
 using _ms = std::chrono::milliseconds;
 template <typename T> using _cd = std::chrono::duration<T>;
+/**
+ * @brief      Class for testing the trad_matrix and lazy_matrix
+ *
+ * @tparam     F     Type of matrix
+ */
 template <typename F> class benchmark {
 private:
   lazy_matrix<F> lm;

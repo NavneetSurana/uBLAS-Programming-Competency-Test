@@ -48,8 +48,10 @@ public:
    */
   trad_matrix(const TDVec<T> &vec)
       : size_x(vec.size()), size_y((*vec.begin()).size()) {
-    for (const auto it : vec) {
-      _array.insert(_array.begin(), it.begin(), it.end());
+    for (auto& it : vec) {
+      for(auto& itr: it){
+        _array.push_back(itr);
+      }
     }
   }
   /**
@@ -59,8 +61,10 @@ public:
    */
   trad_matrix(const List<T> &l)
       : size_x(l.size()), size_y((*l.begin()).size()) {
-    for (const auto it : l) {
-      _array.insert(_array.begin(), it.begin(), it.end());
+    for (auto& it : l) {
+      for(auto& itr: it){
+        _array.push_back(itr);
+      }
     }
   }
   /**
@@ -147,7 +151,7 @@ public:
    */
   template <typename R1> decltype(auto) operator+(const R1 &other) {
     assert(shape() == other.shape());
-    trad_matrix<decltype((*this)(0, 0) + b(0, 0))> temp(size_x, size_y);
+    trad_matrix<decltype((*this)(0, 0) + other(0, 0))> temp(size_x, size_y);
     for (int i = 0; i < size_x; i++) {
       for (int j = 0; j < size_y; j++) {
         temp(i, j) = (*this)(i, j) + other(i, j);
@@ -169,9 +173,9 @@ public:
    *
    * @tparam     R1     matrix
    */
-  template <typename R1> decltype(auto) operator-(const R1 &b) {
+  template <typename R1> decltype(auto) operator-(const R1 &other) {
     assert(shape() == other.shape());
-    trad_matrix<decltype((*this)(0, 0) + b(0, 0))> temp(size_x, size_y);
+    trad_matrix<decltype((*this)(0, 0) + other(0, 0))> temp(size_x, size_y);
     for (int i = 0; i < size_x; i++) {
       for (int j = 0; j < size_y; j++) {
         temp(i, j) = (*this)(i, j) - other(i, j);
@@ -242,9 +246,9 @@ public:
    * @tparam     R1     matrix
    */
   template <typename R1> decltype(auto) operator%(const R1 &other) {
-    assert(shape().second == b.shape().first);
+    assert(shape().second == other.shape().first);
     sz_t p = size_x, q = size_y, r = other.shape().second;
-    trad_matrix<decltype((*this)(0, 0) + b(0, 0))> temp(size_x, size_y);
+    trad_matrix<decltype((*this)(0, 0) + other(0, 0))> temp(size_x, size_y);
     for (sz_t i = 0; i < p; i++) {
       for (sz_t j = 0; j < q; j++) {
         for (sz_t k = 0; k < r; k++) {
