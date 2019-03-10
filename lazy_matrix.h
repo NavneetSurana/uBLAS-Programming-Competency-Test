@@ -1,4 +1,3 @@
-
 #pragma once
 #include <cassert>
 #include <exception>
@@ -411,7 +410,7 @@ public:
   }
 
   /**
-   * @brief      Operator / Overloading for Element-Wise Multiplication
+   * @brief      Operator * Overloading for Element-Wise Multiplication
    *
    * @param[in]  other  reference to the matrix or expression which is to be
    *                    multiplied
