@@ -1,15 +1,13 @@
+#include "benchmark.h"
 #include <iostream>
-#include "matrix.hpp"
 using namespace std;
 int main() {
-    matrix<int> a(10, 10, 2);
-    // cout << a << endl;
-    auto c = a + a + a + a + a + a + a + a + a + a;
-    // cout << c << endl;
-    auto d = a - a - a - a - a - a - a - a - a - a;
-    // cout << d << endl;
-    a += a + a;
-    //cout << a << endl;
-    a -= a + a;
-    cout << a << endl;
+  benchmark<double> test(1000, 1000, 1.0);
+  decltype(auto) result = test.run();
+  test.print(result.first, result.second);
+  lazy_matrix<int> a(2, 2, 2);
+  auto c = a % a % a % a;
+  lazy_matrix<decltype(c(0,0))> b= c;
+  cout << b << endl;
+  system("pause");
 }
