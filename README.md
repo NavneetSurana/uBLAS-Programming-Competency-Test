@@ -1,7 +1,7 @@
 
 # Simple Matrix Library
  *A simple matrix library that use expression templates and modern concepts of C++ to solve algebric expressions. This project is built for Programming Competency Test under GSoC2O19/Boost/uBLAS.*
-## Prerequisites
+## Prerequisite
 
 ```
 Clang -v 7.0.1 or greater
@@ -62,8 +62,8 @@ clang++ -std=c++17 [your src file name].cpp -o build
 * **Navneet Surana** - *Some of my works can be viewed at* - [GitHub](https://github.com/NavneetSurana)
 * *Along with this I have also worked on solving 9X9 Sudoku Puzzle using genetic algorithm.*
 ---
-*Thanks to GitHub for providing such an amazing open-source platform.*
-*I hope this project brings in new opportunities for me.*
+* *Thanks to GitHub for providing such an amazing open-source platform.*
+* *I hope this project brings in new opportunities for me.*
 
  
 
