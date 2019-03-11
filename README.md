@@ -59,7 +59,7 @@ clang++ -std=c++17 [your src file name].cpp -o build
 * *Along with this I have also worked on solving 9X9 Sudoku Puzzle using genetic algorithm.*
 ---
 *Thanks to GitHub for providing such an amazing open-source platform.*
-*I hope this project brings in new opportunity for me.*
+*I hope this project brings in new opportunities for me.*
 
  
 
