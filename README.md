@@ -52,7 +52,11 @@ clang++ -std=c++17 [your src file name].cpp -o build
 
 *Inorder to know how fast [lazy_matrix](include/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using the [test_case_generator.cpp](src/test_case_generator.cpp) file I have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file has been used for testing and extracting the results of the test. After executing the test using [main.cpp](src/main.cpp) file, the results have been conveyed in the plot below. For proof one can see [proof.png](other/proof.png) and for test logs one can see [test_logs.txt](other/test_logs.txt). From the graph below one can see that Lazy Evaluation is nearly 50% more efficient than the Traditional way of Evaluation.*
 
+***Note***: *The test above involved only element-wise operations. The operator `%` for Standard Matrix-Matrix Multiplication is coded without using temporaries, which unnecessarily increased the complexity due to redundant evaluation of the same elements in  ![link broken](other/Eqn.gif). One way to reduce complexity is to evaluate operator `%` as and when encountered and store the result in a temporary or do something related to optimization of the expression templates tree.*
+
 ![Link Broken](other/graph.png)
+
+
 ## Author
 
 * **Navneet Surana** - *Some of my works can be viewed at* - [GitHub](https://github.com/NavneetSurana)
