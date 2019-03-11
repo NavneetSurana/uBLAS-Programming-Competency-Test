@@ -74,31 +74,6 @@ struct _smul {
     return op1(i, j) * op2;
   }
 };
-
-/**
- * @brief      It solves c(i,j)=sum of a(i,k)*b(k,j) over all k < number of rows
- *             in b
- *
- * @tparam     R1    First Parameter
- * @tparam     R2    can be a matrix or expression
- */
-template <typename R1, typename R2> class _tmul {
-private:
-  const R1 &op1;
-  const R2 &op2;
-  const sz_t k;
-
-public:
-  _tmul(const R1 &a, const R2 &b, const sz_t &pk) : op1(a), op2(b), k(pk) {}
-  decltype(auto) operator()(const sz_t &i, const sz_t &j) const {
-    if (k == 0) {
-      return op1(i, k) * op2(k, j);
-    } else {
-      return op1(i, k) * op2(k, j) +
-             (_tmul<R1, R2>(op1, op2, k - 1)).operator()(i, j);
-    }
-  }
-};
 /**
  * @brief      Functor for getting (i,j)th element of Matrix-Matrix
  *             multiplication
@@ -106,12 +81,15 @@ public:
 struct _std_mul {
   template <typename R1, typename R2>
   decltype(auto) operator()(const R1 &op1, const R2 &op2, const sz_t &i,
-                            const sz_t &j, sz_t k = 0) const {
-    if (k + 1 < op2.shape().second) {
-      return op1(i, k) * op2(k, j) +
-             (_tmul<R1, R2>(op1, op2, op2.shape().first - 1))(i, j);
-    } else {
+                            const sz_t &j) const {
+    return (_std_mul:: operator () (op1, op2, op2.shape().first - 1,i, j));
+  }
+  template <typename R1, typename R2> 
+  decltype(auto) operator()(const R1 &op1, const R2 &op2, const sz_t &k,const sz_t &i, const sz_t &j) const {
+    if (k == 0) {
       return op1(i, k) * op2(k, j);
+    } else {
+      return op1(i, k) * op2(k, j) + (_std_mul:: operator () (op1, op2, k - 1, i, j));
     }
   }
 };
@@ -150,6 +128,20 @@ public:
    */
   decltype(auto) shape() const { return std::make_pair(size_x, size_y); }
 
+  /**
+   * @brief      Oveloading operator << to use std:: cout
+   */
+  friend std::ostream &operator<<(std::ostream &out, expr<R1,R2,Op> &other) {
+    sz_t size_x = other.shape().first;
+    sz_t size_y = other.shape().second;
+    for (sz_t i = 0; i < size_x; i++) {
+      for (sz_t j = 0; j < size_y; j++) {
+        out << other(i, j) << ' ';
+      }
+      out << std::endl;
+    }
+    return out;
+  }
   /**
    * Operator + Overloading for Standard Matrix Addition
    */
