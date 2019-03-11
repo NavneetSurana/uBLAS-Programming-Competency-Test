@@ -1,14 +1,14 @@
 /**
  * test execution file
  */
-#include "include/benchmark.h"
+#include "D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/include/benchmark.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
 using namespace std;
 int main() {
   ofstream out;
-  out.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/rsltGraph.xls");
+  out.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/other/rsltGraph.xls");
   out<<"Size of Square Matrix\tLazy Matrix\tTraditional Matrix"<<endl;
   for (int i = 50; i <= 2000; i += 50) {
     benchmark<double> test(i, i, 1.0);

@@ -50,9 +50,13 @@ clang++ -std=c++17 [your src file name].cpp -o build
 
 ## Benchmark
 
-*Inorder to test how fast [lazy_matrix](include/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using [test_case_generator.cpp](test_case_generator.cpp) file have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file is used for testing and extracting the results of the test.After executing the test using [main.cpp](main.cpp), the results are being conveyed in the plot below.For proof one can see [proof.png](proof.png) and for test logs one can see [test_logs.txt](test_logs.txt).*
+*Inorder to test how fast [lazy_matrix](include/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using [test_case_generator.cpp](src/test_case_generator.cpp) file have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file is used for testing and extracting the results of the test.After executing the test using [main.cpp](src/main.cpp), the results are being conveyed in the plot below.For proof one can see [proof.png](proof.png) and for test logs one can see [test_logs.txt](other/test_logs.txt).*
 
-![Link Broken](graph.png)
+![Link Broken](other/graph.png)
+## Author
+
+* **Navneet Surana** - *Initial work* - [GitHub](https://github.com/NavneetSurana)
+ 
 
 
 
