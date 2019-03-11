@@ -2,16 +2,21 @@
  * test execution file
  */
 #include "include/benchmark.h"
+#include <fstream>
 #include <iostream>
+#include <vector>
 using namespace std;
 int main() {
-  benchmark<double> test(1000, 1000, 1.0);
-  decltype(auto) result = test.run();
-  test.print(result.first, result.second);
-  lazy_matrix<int> a(2,2,2);
-  trad_matrix<int> b(2,2,2);
-  b=b%b%b;
-  auto c=a%a%a;
-  cout<< c<< endl;
-  cout<< b<<endl;
+  ofstream out;
+  out.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/rsltGraph.xls");
+  out<<"Size of Square Matrix\tLazy Matrix\tTraditional Matrix"<<endl;
+  for (int i = 50; i <= 2000; i += 50) {
+    benchmark<double> test(i, i, 1.0);
+    decltype(auto) result = test.run();
+    out << i << "\t" << result.first.count() << "\t" << result.second.count()
+        << endl;
+    test.print(result.first, result.second);
+    test.print_file(result.first, result.second);
+  }
+  out.close();
 }

@@ -51,7 +51,7 @@ public:
   }
   template <typename R1> void print_file(R1 &result1, R1 &result2) {
     std::fstream fs;
-    fs.open("test_logs.txt", std::fstream::app);
+    fs.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/test_logs.txt", std::fstream::app);
     fs << std::endl;
     fs << "Results for matrix(" << size_x << " , " << size_y << " , " << value
        << ") :----------------" << std::endl;
@@ -59,6 +59,7 @@ public:
        << " ms\n";
     fs << "TRADITION Matrix took  -------------- " << result2.count()
        << " ms\n";
+    fs.close();
   }
   template <typename R1> void print(R1 &result1, R1 &result2) {
     std::cout << std::endl;
