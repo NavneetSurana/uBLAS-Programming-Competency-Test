@@ -21,8 +21,8 @@ clang++ -std=c++17 [your src file name].cpp -o build
 ```
 ./build
 ```
-## Example Source File
-*Please refer to [example.cpp](example.cpp).*
+## Documentation
+*Please refer to [Simple Matrix Library](https://navneetsurana.github.io/uBLAS-Programming-Competency-Test) for documentation.*
 ## Features
 *The table below shows various operations that can be performed using this library along with short description.*
 
