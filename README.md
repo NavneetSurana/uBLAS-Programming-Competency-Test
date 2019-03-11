@@ -1,7 +1,7 @@
 
 # Simple Matrix Library
  *A simple matrix library that use expression templates and modern concepts of C++ to solve algebric expressions. This project is built for Programming Competency Test under GSoC2O19/Boost/uBLAS.*
-## Prerequisites
+## Prerequisite
 
 ```
 Clang -v 7.0.1 or greater
