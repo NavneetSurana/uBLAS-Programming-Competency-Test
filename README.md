@@ -39,7 +39,7 @@ clang++ -std=c++17 [your src file name].cpp -o build
 | `*`  |   `Yes` | *Performs element-wise Matrix-Matrix Multiplication*|
 | `*=` |   `No`  | *Performs assignment after element-wise Matrix-Matrix Multiplication*|
 ## Benchmark
-*Inorder to test how fast [lazy_matrix](innclude/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using [test.cpp](test.cpp) file have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file is used for testing and extracting the results of the test.After executing the test using [main.cpp](main.cpp), the results are being conveyed in the plot below.*
+*Inorder to test how fast [lazy_matrix](include/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using [test_case_generator.cpp](test_case_generator.cpp) file have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file is used for testing and extracting the results of the test.After executing the test using [main.cpp](main.cpp), the results are being conveyed in the plot below.*
 
 
 
