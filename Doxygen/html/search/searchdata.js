@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "_elost",
   1: "_el",
   2: "l",
-  3: "_elos",
+  3: "elos",
   4: "lst",
   5: "o"
 };

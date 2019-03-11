@@ -6,6 +6,5 @@ var searchData=
   ['_5fsdiv',['_sdiv',['../struct__sdiv.html',1,'']]],
   ['_5fsmul',['_smul',['../struct__smul.html',1,'']]],
   ['_5fstd_5fmul',['_std_mul',['../struct__std__mul.html',1,'']]],
-  ['_5fsub',['_sub',['../struct__sub.html',1,'']]],
-  ['_5ftmul',['_tmul',['../class__tmul.html',1,'']]]
+  ['_5fsub',['_sub',['../struct__sub.html',1,'']]]
 ];

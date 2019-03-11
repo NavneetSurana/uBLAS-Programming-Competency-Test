@@ -28,6 +28,11 @@ decltype(auto) \mbox{\hyperlink{classexpr_aa61617d3e742a72e3ebbe3e289c32818}{sha
 \item 
 decltype(auto) \mbox{\hyperlink{classexpr_a095b81efbf9ed48db95750cd726460a2}{operator()}} (const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&i, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&j) const
 \end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classexpr_a2298d0a57665feadc1e35ac9df610dc8}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Oveloading operator $<$$<$ to use std\+:\+: cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -45,6 +50,10 @@ Class for expression.
 {\em Op} & Functor for atithematic operations \\
 \hline
 \end{DoxyTemplParams}
+
+
+Definition at line 104 of file lazy\+\_\+matrix.\+h.
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -70,6 +79,10 @@ Constructs the object.
 \end{DoxyParams}
 
 
+Definition at line 120 of file lazy\+\_\+matrix.\+h.
+
+
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classexpr_a7a78d4cfe0e97d19946a2ffb80882978}\label{classexpr_a7a78d4cfe0e97d19946a2ffb80882978}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator $\ast$@{operator $\ast$}}
@@ -79,7 +92,11 @@ Constructs the object.
 template$<$typename F $>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const F \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator $\ast$ Overloading for Element-\/\+Wise Multiplication \mbox{\Hypertarget{classexpr_abb42fe3353cc4446cf4cdae9e51ecb63}\label{classexpr_abb42fe3353cc4446cf4cdae9e51ecb63}} 
+Operator $\ast$ Overloading for Element-\/\+Wise Multiplication 
+
+Definition at line 173 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_abb42fe3353cc4446cf4cdae9e51ecb63}\label{classexpr_abb42fe3353cc4446cf4cdae9e51ecb63}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator\%@{operator\%}}
 \index{operator\%@{operator\%}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{operator\%()}{operator\%()}}
@@ -87,14 +104,22 @@ Operator $\ast$ Overloading for Element-\/\+Wise Multiplication \mbox{\Hypertarg
 template$<$typename F $>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator\% (\begin{DoxyParamCaption}\item[{const F \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator \% Overloading for Standard Matrix Multiplication \mbox{\Hypertarget{classexpr_a095b81efbf9ed48db95750cd726460a2}\label{classexpr_a095b81efbf9ed48db95750cd726460a2}} 
+Operator \% Overloading for Standard Matrix Multiplication 
+
+Definition at line 181 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_a095b81efbf9ed48db95750cd726460a2}\label{classexpr_a095b81efbf9ed48db95750cd726460a2}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}}
 {\footnotesize\ttfamily template$<$typename R1, typename R2, typename Op$>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{i,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator () overloading for gitting the (i,j)th element of the expression \mbox{\Hypertarget{classexpr_a252251779aa235aed7a5a7fec6ebe995}\label{classexpr_a252251779aa235aed7a5a7fec6ebe995}} 
+Operator () overloading for gitting the (i,j)th element of the expression 
+
+Definition at line 188 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_a252251779aa235aed7a5a7fec6ebe995}\label{classexpr_a252251779aa235aed7a5a7fec6ebe995}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator+@{operator+}}
 \index{operator+@{operator+}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{operator+()}{operator+()}}
@@ -102,7 +127,11 @@ Operator () overloading for gitting the (i,j)th element of the expression \mbox{
 template$<$typename F $>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const F \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator + Overloading for Standard Matrix Addition \mbox{\Hypertarget{classexpr_ab46b7e78ad487b606b12e81c24cb3eeb}\label{classexpr_ab46b7e78ad487b606b12e81c24cb3eeb}} 
+Operator + Overloading for Standard Matrix Addition 
+
+Definition at line 148 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_ab46b7e78ad487b606b12e81c24cb3eeb}\label{classexpr_ab46b7e78ad487b606b12e81c24cb3eeb}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
@@ -110,7 +139,11 @@ Operator + Overloading for Standard Matrix Addition \mbox{\Hypertarget{classexpr
 template$<$typename F $>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const F \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator -\/ Overloading for Standard Matrix Subtraction \mbox{\Hypertarget{classexpr_abf2a263cd1346fe818d886cdc94ae4d0}\label{classexpr_abf2a263cd1346fe818d886cdc94ae4d0}} 
+Operator -\/ Overloading for Standard Matrix Subtraction 
+
+Definition at line 156 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_abf2a263cd1346fe818d886cdc94ae4d0}\label{classexpr_abf2a263cd1346fe818d886cdc94ae4d0}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator/@{operator/}}
 \index{operator/@{operator/}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{operator/()}{operator/()}}
@@ -118,7 +151,11 @@ Operator -\/ Overloading for Standard Matrix Subtraction \mbox{\Hypertarget{clas
 template$<$typename F $>$ \\
 decltype(auto) \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const F \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Operator / Overloading for Element-\/\+Wise Division \mbox{\Hypertarget{classexpr_aa61617d3e742a72e3ebbe3e289c32818}\label{classexpr_aa61617d3e742a72e3ebbe3e289c32818}} 
+Operator / Overloading for Element-\/\+Wise Division 
+
+Definition at line 165 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classexpr_aa61617d3e742a72e3ebbe3e289c32818}\label{classexpr_aa61617d3e742a72e3ebbe3e289c32818}} 
 \index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!shape@{shape}}
 \index{shape@{shape}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
 \subsubsection{\texorpdfstring{shape()}{shape()}}
@@ -132,6 +169,28 @@ Gives the dimensions of the resultant expression.
 \begin{DoxyReturn}{Returns}
 return a pair whose first value is the number of rows and the second value is the number of columns 
 \end{DoxyReturn}
+
+
+Definition at line 129 of file lazy\+\_\+matrix.\+h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classexpr_a2298d0a57665feadc1e35ac9df610dc8}\label{classexpr_a2298d0a57665feadc1e35ac9df610dc8}} 
+\index{expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!expr$<$ R1, R2, Op $>$@{expr$<$ R1, R2, Op $>$}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename R1, typename R2, typename Op$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, Op $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Oveloading operator $<$$<$ to use std\+:\+: cout. 
+
+
+
+Definition at line 134 of file lazy\+\_\+matrix.\+h.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

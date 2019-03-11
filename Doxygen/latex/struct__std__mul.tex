@@ -12,20 +12,41 @@ Functor for getting (i,j)th element of Matrix-\/\+Matrix multiplication.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename R1 , typename R2 $>$ }\\decltype(auto) \mbox{\hyperlink{struct__std__mul_a1a0d6c312b897807d1d9f2a040453118}{operator()}} (const R1 \&op1, const R2 \&op2, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&i, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&j, \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} k=0) const
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\decltype(auto) \mbox{\hyperlink{struct__std__mul_ac151a60a20f2c5fb6fb48abb24926ab3}{operator()}} (const R1 \&op1, const R2 \&op2, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&i, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&j) const
+\item 
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\decltype(auto) \mbox{\hyperlink{struct__std__mul_a7042dcb453b74c4e3fa1c70179c38043}{operator()}} (const R1 \&op1, const R2 \&op2, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&k, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&i, const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&j) const
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Functor for getting (i,j)th element of Matrix-\/\+Matrix multiplication. 
 
+Definition at line 81 of file lazy\+\_\+matrix.\+h.
+
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{struct__std__mul_a1a0d6c312b897807d1d9f2a040453118}\label{struct__std__mul_a1a0d6c312b897807d1d9f2a040453118}} 
+\mbox{\Hypertarget{struct__std__mul_ac151a60a20f2c5fb6fb48abb24926ab3}\label{struct__std__mul_ac151a60a20f2c5fb6fb48abb24926ab3}} 
 \index{\_std\_mul@{\_std\_mul}!operator()@{operator()}}
 \index{operator()@{operator()}!\_std\_mul@{\_std\_mul}}
-\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename R1 , typename R2 $>$ \\
-decltype(auto) \+\_\+std\+\_\+mul\+::operator() (\begin{DoxyParamCaption}\item[{const R1 \&}]{op1,  }\item[{const R2 \&}]{op2,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{i,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{j,  }\item[{\mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}}}]{k = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \+\_\+std\+\_\+mul\+::operator() (\begin{DoxyParamCaption}\item[{const R1 \&}]{op1,  }\item[{const R2 \&}]{op2,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{i,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 83 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{struct__std__mul_a7042dcb453b74c4e3fa1c70179c38043}\label{struct__std__mul_a7042dcb453b74c4e3fa1c70179c38043}} 
+\index{\_std\_mul@{\_std\_mul}!operator()@{operator()}}
+\index{operator()@{operator()}!\_std\_mul@{\_std\_mul}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R1 , typename R2 $>$ \\
+decltype(auto) \+\_\+std\+\_\+mul\+::operator() (\begin{DoxyParamCaption}\item[{const R1 \&}]{op1,  }\item[{const R2 \&}]{op2,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{k,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{i,  }\item[{const \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 88 of file lazy\+\_\+matrix.\+h.
 
 
 

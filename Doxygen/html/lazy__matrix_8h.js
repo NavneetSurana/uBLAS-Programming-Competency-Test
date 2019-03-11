@@ -6,7 +6,6 @@ var lazy__matrix_8h =
     [ "_sdiv", "struct__sdiv.html", "struct__sdiv" ],
     [ "_emul", "struct__emul.html", "struct__emul" ],
     [ "_smul", "struct__smul.html", "struct__smul" ],
-    [ "_tmul", "class__tmul.html", "class__tmul" ],
     [ "_std_mul", "struct__std__mul.html", "struct__std__mul" ],
     [ "expr", "classexpr.html", "classexpr" ],
     [ "lazy_matrix", "classlazy__matrix.html", "classlazy__matrix" ],

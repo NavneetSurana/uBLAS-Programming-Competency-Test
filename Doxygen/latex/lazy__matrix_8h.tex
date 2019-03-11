@@ -19,8 +19,6 @@ struct \mbox{\hyperlink{struct__emul}{\+\_\+emul}}
 \begin{DoxyCompactList}\small\item\em Functor for multiplying corresponding position. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct__smul}{\+\_\+smul}}
 \begin{DoxyCompactList}\small\item\em Functor for multiplying with scalar. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class__tmul}{\+\_\+tmul$<$ R1, R2 $>$}}
-\begin{DoxyCompactList}\small\item\em It solves c(i,j)=sum of a(i,k)$\ast$b(k,j) over all k $<$ number of rows in b. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct__std__mul}{\+\_\+std\+\_\+mul}}
 \begin{DoxyCompactList}\small\item\em Functor for getting (i,j)th element of Matrix-\/\+Matrix multiplication. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classexpr}{expr$<$ R1, R2, Op $>$}}
@@ -46,11 +44,19 @@ using \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 using \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}} =  std\+::initializer\+\_\+list$<$std\+::initializer\+\_\+list$<$T$>$ $>$}
 
+
+
+Definition at line 10 of file lazy\+\_\+matrix.\+h.
+
 \mbox{\Hypertarget{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}\label{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}} 
 \index{lazy\_matrix.h@{lazy\_matrix.h}!sz\_t@{sz\_t}}
 \index{sz\_t@{sz\_t}!lazy\_matrix.h@{lazy\_matrix.h}}
 \subsubsection{\texorpdfstring{sz\_t}{sz\_t}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{lazy__matrix_8h_acba2745dcfc55b2d05ff45adc6a0a015}{sz\+\_\+t}} =  std\+::size\+\_\+t}
+
+
+
+Definition at line 7 of file lazy\+\_\+matrix.\+h.
 
 \mbox{\Hypertarget{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}\label{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}} 
 \index{lazy\_matrix.h@{lazy\_matrix.h}!TDVec@{TDVec}}
@@ -58,4 +64,8 @@ using \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}}
 \subsubsection{\texorpdfstring{TDVec}{TDVec}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 using \mbox{\hyperlink{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}{T\+D\+Vec}} =  std\+::vector$<$std\+::vector$<$T$>$ $>$}
+
+
+
+Definition at line 8 of file lazy\+\_\+matrix.\+h.
 
