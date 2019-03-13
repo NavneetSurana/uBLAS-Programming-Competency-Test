@@ -75,7 +75,7 @@ struct _smul {
   }
 };
 /**
- * @brief      Functor for getting (i,j)th element of Matrix-Matrix
+ * @brief      Functor for getting (i,j)th element of Standard Matrix-Matrix
  *             multiplication
  */
 struct _std_mul {
@@ -86,10 +86,22 @@ struct _std_mul {
   }
   template <typename R1, typename R2> 
   decltype(auto) operator()(const R1 &op1, const R2 &op2, const sz_t &k,const sz_t &i, const sz_t &j) const {
+    double temp1,temp2,temp3;
     if (k == 0) {
-      return op1(i, k) * op2(k, j);
+#pragma omp parallel
+      {
+        temp1 = op1(i, k);
+        temp2 = op2(k, j);
+      }
+      return temp1*temp2;
     } else {
-      return op1(i, k) * op2(k, j) + (_std_mul:: operator () (op1, op2, k - 1, i, j));
+#pragma omp parallel
+      {
+        temp1 = op1(i, k);
+        temp2 = op2(k, j);
+        temp3 = (_std_mul:: operator () (op1, op2, k - 1, i, j));
+      }
+      return temp1*temp2+temp3;
     }
   }
 };
@@ -134,6 +146,7 @@ public:
   friend std::ostream &operator<<(std::ostream &out, expr<R1,R2,Op> &other) {
     sz_t size_x = other.shape().first;
     sz_t size_y = other.shape().second;
+    #pragma omp parallel for
     for (sz_t i = 0; i < size_x; i++) {
       for (sz_t j = 0; j < size_y; j++) {
         out << other(i, j) << ' ';
@@ -190,17 +203,52 @@ public:
   }
 };
 
+namespace policy{
+  /**
+   * @brief      policy that take row as first priority
+   */
+  class row_major {
+  public:
+  	template <typename R1>
+    decltype(auto) operator () (const sz_t& i, const sz_t& j, const R1 &a) const{
+      return a._array[i*a.size_y + j];
+    }
+    template <typename R1>
+    decltype(auto) operator () (const sz_t& i, const sz_t& j,R1 &a) {
+      return a._array[i*a.size_y + j];
+    }
+  };
+
+  /**
+   * @brief      policy that take column as first priority
+   */
+  class column_major {
+  public:
+  	template <typename R1>
+    decltype(auto) operator () (const sz_t& i, const sz_t& j, const R1 &a) const{
+      return a._array[j*a.size_x + i];
+    }
+    template <typename R1>
+    decltype(auto) operator () (const sz_t& i, const sz_t& j,R1 &a) {
+      return a._array[j*a.size_x + i];
+    }
+  };
+};
+
 /**
  * @brief      Class for lazy matrix.
  *
- * @tparam     T     Data type of the matrix
+ * @tparam     T       Data type of the matrix
+ * @tparam     policy  User case assign how data will be accessed takes value
+ *                     policy:: row_major or policy::column_major
  */
-template <typename T> class lazy_matrix {
+template <typename T,typename ploy=policy::row_major> class lazy_matrix {
 private:
   std::vector<T> _array;
   const sz_t size_x;
   const sz_t size_y;
-
+  friend ploy;
+  ploy pol;
 public:
   /**
    * @brief      Constructs the object.
@@ -233,8 +281,16 @@ public:
    */
   lazy_matrix(const TDVec<T> &vec)
       : size_x(vec.size()), size_y((*vec.begin()).size()) {
-    for (const auto it : vec) {
-      _array.insert(_array.begin(), it.begin(), it.end());
+    if (typeid(ploy) == typeid(policy::row_major)) {
+      for (auto &it : vec) {
+        _array.insert( _array.end(),it.begin(), it.end());
+      }
+    } else {
+      for (sz_t j = 0; j < size_y; j++) {
+        for (sz_t i = 0; i < size_x; i++) {
+          _array.push_back(vec[i][j]);
+        }
+      }
     }
   }
 
@@ -245,8 +301,16 @@ public:
    */
   lazy_matrix(const List<T> &l)
       : size_x(l.size()), size_y((*l.begin()).size()) {
-    for (const auto it : l) {
-      _array.insert(_array.begin(), it.begin(), it.end());
+    if(typeid(ploy) == typeid(policy::row_major)){
+      for (auto &it : l) {
+        _array.insert(_array.end(),it.begin(), it.end());
+      }
+    } else {
+      for (sz_t j = 0; j < size_y; j++) {
+        for (sz_t i = 0; i < size_x; i++) {
+          _array.push_back(*((*(l.begin()+i)).begin()+j));
+        }
+      }
     }
   }
 
@@ -262,9 +326,17 @@ public:
   template <typename R1, typename R2, typename R3>
   lazy_matrix(const expr<R1, R2, R3> &exp)
       : size_x(exp.shape().first), size_y(exp.shape().second) {
-    for (sz_t i = 0; i < size_x; i++) {
+    if(typeid(ploy) == typeid(policy::row_major)){
+      	for (sz_t i = 0; i < size_x; i++) {
+          for (sz_t j = 0; j < size_y; j++) {
+            _array.push_back(exp(i,j));
+          }
+        }
+    } else {
       for (sz_t j = 0; j < size_y; j++) {
-        _array.push_back(exp(i, j));
+        for (sz_t i = 0; i < size_x; i++) {
+          _array.push_back(exp(i,j));
+        }
       }
     }
   }
@@ -273,23 +345,27 @@ public:
    * @brief      Gives the dimensions of the matrix
    */
   decltype(auto) shape() const { return std::make_pair(size_x, size_y); }
-
+  /**
+   * function for getting processed data i.e. member _array which is processed under row_major or column_major; 
+   */
+  decltype(auto) pcd_data() const {return _array;}
   /**
    * Operator () Overloading for getting the (i,j)th element
    */
   inline const T operator()(const std::size_t i, const std::size_t j) const {
-    return _array[i * size_y + j];
+    return pol(i,j,*this);
   }
   inline T &operator()(const std::size_t i, const std::size_t j) {
-    return _array[i * size_y + j];
+    return pol(i,j,*this);
   }
 
   /**
    * @brief      Oveloading operator << to use std:: cout
    */
-  friend std::ostream &operator<<(std::ostream &out, lazy_matrix<T> &other) {
+  friend std::ostream &operator<<(std::ostream &out, lazy_matrix<T,ploy> &other) {
     sz_t size_x = other.shape().first;
     sz_t size_y = other.shape().second;
+    #pragma omp parallel for
     for (sz_t i = 0; i < size_x; i++) {
       for (sz_t j = 0; j < size_y; j++) {
         out << other(i, j) << ' ';
@@ -309,12 +385,14 @@ public:
    */
   template <typename R1> lazy_matrix operator=(const R1 &other) {
     assert(shape() == other.shape());
-    lazy_matrix<T> temp(size_x, size_y);
+    lazy_matrix<T,ploy> temp(size_x, size_y);
+    #pragma omp parallel for
     for (sz_t i = 0; i < size_x; i++) {
       for (sz_t j = 0; j < size_y; j++) {
         temp(i, j) = other(i, j);
       }
     }
+    #pragma omp parallel for
     for (sz_t i = 0; i < size_x; i++) {
       for (sz_t j = 0; j < size_y; j++) {
         (*this)(i, j) = temp(i, j);
@@ -358,7 +436,7 @@ public:
    */
   template <typename R1> decltype(auto) operator+(const R1 &other) {
     assert(shape() == other.shape());
-    return expr<lazy_matrix<T>, R1, _add>(*this, other, _add());
+    return expr<lazy_matrix<T,ploy>, R1, _add>(*this, other, _add());
   }
   /**
    * @brief      assignment after adding
@@ -376,7 +454,7 @@ public:
    */
   template <typename R1> decltype(auto) operator-(const R1 &other) {
     assert(shape() == other.shape());
-    return expr<lazy_matrix<T>, R1, _sub>(*this, other, _sub());
+    return expr<lazy_matrix<T,ploy>, R1, _sub>(*this, other, _sub());
   }
   /**
    * @brief      assignment after subtracting
@@ -395,7 +473,7 @@ public:
    */
   template <typename R1> decltype(auto) operator/(const R1 &other) {
     assert(shape() == other.shape());
-    return expr<lazy_matrix<T>, R1, _ediv>(*this, other, _ediv());
+    return expr<lazy_matrix<T,ploy>, R1, _ediv>(*this, other, _ediv());
   }
   /**
    * @brief      assignment after element-wise division
@@ -414,7 +492,7 @@ public:
    */
   template <typename R1> decltype(auto) operator*(const R1 &other) {
     assert(shape() == other.shape());
-    return expr<lazy_matrix<T>, R1, _emul>(*this, other, _emul());
+    return expr<lazy_matrix<T,ploy>, R1, _emul>(*this, other, _emul());
   }
   /**
    * @brief      assignment after element-wise multiplication
@@ -433,7 +511,7 @@ public:
    */
   template <typename R1> decltype(auto) operator%(const R1 &other) {
     assert(shape().second == other.shape().first);
-    return expr<lazy_matrix<T>, R1, _std_mul>(*this, other, _std_mul());
+    return expr<lazy_matrix<T,ploy>, R1, _std_mul>(*this, other, _std_mul());
   }
   /**
    * @brief      assignment after standard matrix multiplication

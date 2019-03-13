@@ -47,7 +47,8 @@ clang++ -std=c++17 [your src file name].cpp -o build
 | `/=` |   `No`  | *Performs assignment after element-wise Matrix-Matrix Division*|
 | `*`  |   `Yes` | *Performs element-wise Matrix-Matrix Multiplication*|
 | `*=` |   `No`  | *Performs assignment after element-wise Matrix-Matrix Multiplication*|
-
+| `=`  |   `No`  | *Performs assignment of to a given Matrix*|
+| `==` |   `No`  | *Performs comparison in Matrices* |
 ## Efficiency Test
 
 *Inorder to know how fast [lazy_matrix](include/lazy_matrix.h) libraray works I have tested it against traditional way of solving Matrix algebric expressions and the same can be found in [trad_matrix.h](include/trad_matrix.h). Using the [test_case_generator.cpp](src/test_case_generator.cpp) file I have generated some random expression of length 300 involving operators like `+`,`-`,`/`,`*` and  `+=`. The [benchmark.h](include/benchmark.h) file has been used for testing and extracting the results of the test. After executing the test using [main.cpp](src/main.cpp) file, the results have been conveyed in the plot below. For proof one can see [proof.png](other/proof.png) and for test logs one can see [test_logs.txt](other/test_logs.txt). From the graph below one can see that Lazy Evaluation is nearly 50% more efficient than the Traditional way of Evaluation.*

@@ -1,7 +1,7 @@
 # Compiled source #
 ###################
 *.exe
-
+*.o
 # Temporary Files #
 ###################
 temp.txt

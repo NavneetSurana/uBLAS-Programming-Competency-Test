@@ -8,9 +8,9 @@
 using namespace std;
 int main() {
   ofstream out;
-  out.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/other/rsltGraph.xls");
+  out.open("D:/CodeFiles/GIT/uBLAS-Programming-Competency-Test/other/rsltGraph1.xls");
   out<<"Size of Square Matrix\tLazy Matrix\tTraditional Matrix"<<endl;
-  for (int i = 50; i <= 2000; i += 50) {
+  for (int i = 50; i <= 300; i += 50) {
     benchmark<double> test(i, i, 1.0);
     decltype(auto) result = test.run();
     out << i << "\t" << result.first.count() << "\t" << result.second.count()
@@ -19,4 +19,9 @@ int main() {
     test.print_file(result.first, result.second);
   }
   out.close();
+
+  // trad_matrix<int> a(1000,1000,1);
+  // a+=a%a;
+  // cout << c <<endl;
+  
 }
