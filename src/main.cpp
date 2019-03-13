@@ -20,8 +20,7 @@ int main() {
   }
   out.close();
 
-  // trad_matrix<int> a(1000,1000,1);
-  // a+=a%a;
-  // cout << c <<endl;
+  // trad_matrix<int> a(500,500,1);
+  // cout << a <<endl;
   
 }

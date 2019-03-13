@@ -849,3 +849,51 @@ TRADITION Matrix took  -------------- 9 ms
 Results for matrix(100 , 100 , 1) :----------------
 LAZY Matrix took       -------------- 3472 ms
 TRADITION Matrix took  -------------- 63 ms
+
+Results for matrix(50 , 50 , 1) :----------------
+LAZY Matrix took       -------------- 4 ms
+TRADITION Matrix took  -------------- 4 ms
+
+Results for matrix(100 , 100 , 1) :----------------
+LAZY Matrix took       -------------- 44 ms
+TRADITION Matrix took  -------------- 36 ms
+
+Results for matrix(150 , 150 , 1) :----------------
+LAZY Matrix took       -------------- 127 ms
+TRADITION Matrix took  -------------- 115 ms
+
+Results for matrix(200 , 200 , 1) :----------------
+LAZY Matrix took       -------------- 292 ms
+TRADITION Matrix took  -------------- 284 ms
+
+Results for matrix(250 , 250 , 1) :----------------
+LAZY Matrix took       -------------- 590 ms
+TRADITION Matrix took  -------------- 473 ms
+
+Results for matrix(300 , 300 , 1) :----------------
+LAZY Matrix took       -------------- 993 ms
+TRADITION Matrix took  -------------- 881 ms
+
+Results for matrix(50 , 50 , 1) :----------------
+LAZY Matrix took       -------------- 17 ms
+TRADITION Matrix took  -------------- 28 ms
+
+Results for matrix(100 , 100 , 1) :----------------
+LAZY Matrix took       -------------- 83 ms
+TRADITION Matrix took  -------------- 126 ms
+
+Results for matrix(150 , 150 , 1) :----------------
+LAZY Matrix took       -------------- 146 ms
+TRADITION Matrix took  -------------- 275 ms
+
+Results for matrix(200 , 200 , 1) :----------------
+LAZY Matrix took       -------------- 261 ms
+TRADITION Matrix took  -------------- 458 ms
+
+Results for matrix(250 , 250 , 1) :----------------
+LAZY Matrix took       -------------- 433 ms
+TRADITION Matrix took  -------------- 665 ms
+
+Results for matrix(300 , 300 , 1) :----------------
+LAZY Matrix took       -------------- 573 ms
+TRADITION Matrix took  -------------- 971 ms
