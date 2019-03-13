@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "Simple Matrix Library"
-PROJECT_NUMBER         =
+PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "A simple matrix library that use expression templates and modern concepts of C++ to solve algebric expressions. This project is built for Programming Competency Test under [GSoC2K19][Boost][uBLAS]."
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = D:\CodeFiles\GIT\uBLAS-Programming-Competency-Test\Doxygen
@@ -361,8 +361,8 @@ UML_LIMIT_NUM_FIELDS   = 10
 TEMPLATE_RELATIONS     = NO
 INCLUDE_GRAPH          = YES
 INCLUDED_BY_GRAPH      = YES
-CALL_GRAPH             = NO
-CALLER_GRAPH           = NO
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
 GRAPHICAL_HIERARCHY    = YES
 DIRECTORY_GRAPH        = YES
 DOT_IMAGE_FORMAT       = png

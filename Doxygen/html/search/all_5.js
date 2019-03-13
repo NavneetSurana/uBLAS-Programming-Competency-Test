@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tdvec',['TDVec',['../lazy__matrix_8h.html#ab6e3d9072e9f4b56c531bef4d02d2652',1,'lazy_matrix.h']]]
+  ['pcd_5fdata',['pcd_data',['../classlazy__matrix.html#af88477b2ff394bf5b61b554f3017bf89',1,'lazy_matrix']]],
+  ['policy',['policy',['../namespacepolicy.html',1,'']]]
 ];

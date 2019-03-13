@@ -1,5 +1,5 @@
-\hypertarget{classlazy__matrix}{}\section{lazy\+\_\+matrix$<$ T $>$ Class Template Reference}
-\label{classlazy__matrix}\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\hypertarget{classlazy__matrix}{}\section{lazy\+\_\+matrix$<$ T, ploy $>$ Class Template Reference}
+\label{classlazy__matrix}\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 
 
 Class for lazy matrix.  
@@ -12,58 +12,60 @@ Class for lazy matrix.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classlazy__matrix_aef0a15c588094c4dadf2bd879be78d43}{lazy\+\_\+matrix}} ()
+\mbox{\hyperlink{classlazy__matrix_a99f0fbe76db34e2ff6156ab644f06829}{lazy\+\_\+matrix}} ()
 \begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classlazy__matrix_a354b6e228f5bc0991f759161e081f008}{lazy\+\_\+matrix}} (const std\+::size\+\_\+t \&n, const std\+::size\+\_\+t \&m)
+\mbox{\hyperlink{classlazy__matrix_a25ac7f5573206b9b4338240fdcdcf110}{lazy\+\_\+matrix}} (const std\+::size\+\_\+t \&n, const std\+::size\+\_\+t \&m)
 \begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classlazy__matrix_a33321976a3585130b7fc5a5da0735d9c}{lazy\+\_\+matrix}} (const std\+::size\+\_\+t \&n, const std\+::size\+\_\+t \&m, const T \&val)
+\mbox{\hyperlink{classlazy__matrix_ab3eaf8b190b2e1d8c51ee31d23f7f38b}{lazy\+\_\+matrix}} (const std\+::size\+\_\+t \&n, const std\+::size\+\_\+t \&m, const T \&val)
 \begin{DoxyCompactList}\small\item\em Constructs the object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classlazy__matrix_a29db22d791029e5d2e0a8d4d7d7857db}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}{T\+D\+Vec}}$<$ T $>$ \&vec)
+\mbox{\hyperlink{classlazy__matrix_a2c87767de51163379f301de906d6a231}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}{T\+D\+Vec}}$<$ T $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Vector initialization. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classlazy__matrix_ab8457360fa70960b71dc2039d0c2e64d}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}}$<$ T $>$ \&l)
+\mbox{\hyperlink{classlazy__matrix_aec8178a41ca97d895e1e20dbed365d02}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}}$<$ T $>$ \&l)
 \begin{DoxyCompactList}\small\item\em Initialization with 2D list. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 , typename R2 , typename R3 $>$ }\\\mbox{\hyperlink{classlazy__matrix_af27fa9d4de82b3b89eae883404a8033d}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, R3 $>$ \&exp)
+{\footnotesize template$<$typename R1 , typename R2 , typename R3 $>$ }\\\mbox{\hyperlink{classlazy__matrix_a7f5897589a5a5dd07ccdf73794e81d95}{lazy\+\_\+matrix}} (const \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, R3 $>$ \&exp)
 \begin{DoxyCompactList}\small\item\em Initialization with an expression. \end{DoxyCompactList}\item 
-decltype(auto) \mbox{\hyperlink{classlazy__matrix_a01de84f2c1dcaff51f2ac1eeee3427c6}{shape}} () const
+decltype(auto) \mbox{\hyperlink{classlazy__matrix_a4bcc0da3ca5bf4e297c91d48e5005369}{shape}} () const
 \begin{DoxyCompactList}\small\item\em Gives the dimensions of the matrix. \end{DoxyCompactList}\item 
-const T \mbox{\hyperlink{classlazy__matrix_a6d81b29ae59ada2332c1b16a889e3350}{operator()}} (const std\+::size\+\_\+t i, const std\+::size\+\_\+t j) const
+decltype(auto) \mbox{\hyperlink{classlazy__matrix_af88477b2ff394bf5b61b554f3017bf89}{pcd\+\_\+data}} () const
+\begin{DoxyCompactList}\small\item\em function for getting processed data i.\+e. member \+\_\+array which is processed under row\+\_\+major or column\+\_\+major; \end{DoxyCompactList}\item 
+const T \mbox{\hyperlink{classlazy__matrix_a8d253d7fc183071a524232ad43f5afec}{operator()}} (const std\+::size\+\_\+t i, const std\+::size\+\_\+t j) const
 \item 
-T \& \mbox{\hyperlink{classlazy__matrix_ad87bc3cf498acf5480fc0a539c5d3a0a}{operator()}} (const std\+::size\+\_\+t i, const std\+::size\+\_\+t j)
+T \& \mbox{\hyperlink{classlazy__matrix_a43d4b192ebec1e2d246125be883d5a6e}{operator()}} (const std\+::size\+\_\+t i, const std\+::size\+\_\+t j)
 \item 
-{\footnotesize template$<$typename R1 $>$ }\\\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} \mbox{\hyperlink{classlazy__matrix_a3104aa043b2a46f335aa697834634b7a}{operator=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} \mbox{\hyperlink{classlazy__matrix_ad30f653be1460b38c29fdc124d2b3e79}{operator=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Overloading operator = for a assignment of lazy matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\bool \mbox{\hyperlink{classlazy__matrix_a757be4c2224a2ecbac0dc49e0a8a486b}{operator==}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\bool \mbox{\hyperlink{classlazy__matrix_aa3ddfb86317cbab26a9c3bb272a2f08f}{operator==}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Overloading operator == for a comparing equality with other matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a591fc5b952ef341dcb3a20051fd7aa96}{operator+}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a7c5d07e16aeeadbd2a40e3abee1c9ca3}{operator+}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Operator + Overloading for Standard Matrix Addition. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_ad095e5ee3870ca98a267961e260321ce}{operator+=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a00cb7c5564344e23ed3c248324993321}{operator+=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em assignment after adding \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a04ef62e9f2c4395ad0a9e00a0180df9e}{operator-\/}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_ac0e4bc6ef87afe7ef9b435f2f33878f3}{operator-\/}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Operator -\/ Overloading for Standard Matrix Subtraction. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a9b8a37284dfa4be9423322f409b81c63}{operator-\/=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a1115dadbd778a1c2c7e8ad1d0c8a3fd1}{operator-\/=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em assignment after subtracting \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_ad63bef3225861a4845772934bed6dfa4}{operator/}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_ada5c981ceba8ec0bd11afdbcb2c40a09}{operator/}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Operator / Overloading for Element-\/\+Wise Division. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_aa19e114755a98ae28c55cc07e06a3f1e}{operator/=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_acffaec4e4abdb5984ac65aa0b8675e03}{operator/=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em assignment after element-\/wise division \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a0a6d3ba52a1f25250794e978a4ef11d7}{operator $\ast$}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a11954c3e2e8af89ccd5f7ae15e12f40b}{operator $\ast$}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Operator $\ast$ Overloading for Element-\/\+Wise Multiplication. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a4299662cd5c146c7fd9b92cccf90467c}{operator $\ast$=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a130ec9cb8a9d894ab3f017533329ae00}{operator $\ast$=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em assignment after element-\/wise multiplication \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_ad6086869ba1a16b7995804e8f3d53aff}{operator\%}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\decltype(auto) \mbox{\hyperlink{classlazy__matrix_a42ed6693e9be89298335f160e0fad5b4}{operator\%}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em Operator -\/Overloading for Standard Matrix Multiplication. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a6bf0976366215515282bea034b863489}{operator\%=}} (const R1 \&other)
+{\footnotesize template$<$typename R1 $>$ }\\void \mbox{\hyperlink{classlazy__matrix_a644e4a74c288602afd6cae4682949ab5}{operator\%=}} (const R1 \&other)
 \begin{DoxyCompactList}\small\item\em assignment after standard matrix multiplication \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-std\+::ostream \& \mbox{\hyperlink{classlazy__matrix_a2840b44da6b181bb3dfbdf8ffd104fec}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$ \&other)
+std\+::ostream \& \mbox{\hyperlink{classlazy__matrix_a88346f662d7a65addb3240c62dcdd1f9}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$ \&other)
 \begin{DoxyCompactList}\small\item\em Oveloading operator $<$$<$ to use std\+:\+: cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename T$>$\newline
-class lazy\+\_\+matrix$<$ T $>$}
+\subsubsection*{template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$\newline
+class lazy\+\_\+matrix$<$ T, ploy $>$}
 
 Class for lazy matrix. 
 
@@ -71,20 +73,22 @@ Class for lazy matrix.
 \begin{DoxyTemplParams}{Template Parameters}
 {\em T} & Data type of the matrix \\
 \hline
+{\em policy} & User case assign how data will be accessed takes value policy\+:\+: row\+\_\+major or \mbox{\hyperlink{classpolicy_1_1column__major}{policy\+::column\+\_\+major}} \\
+\hline
 \end{DoxyTemplParams}
 
 
-Definition at line 198 of file lazy\+\_\+matrix.\+h.
+Definition at line 254 of file lazy\+\_\+matrix.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classlazy__matrix_aef0a15c588094c4dadf2bd879be78d43}\label{classlazy__matrix_aef0a15c588094c4dadf2bd879be78d43}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a99f0fbe76db34e2ff6156ab644f06829}\label{classlazy__matrix_a99f0fbe76db34e2ff6156ab644f06829}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -92,14 +96,14 @@ Constructs the object.
 
 
 
-Definition at line 208 of file lazy\+\_\+matrix.\+h.
+Definition at line 266 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a354b6e228f5bc0991f759161e081f008}\label{classlazy__matrix_a354b6e228f5bc0991f759161e081f008}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a25ac7f5573206b9b4338240fdcdcf110}\label{classlazy__matrix_a25ac7f5573206b9b4338240fdcdcf110}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{n,  }\item[{const std\+::size\+\_\+t \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{n,  }\item[{const std\+::size\+\_\+t \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -114,14 +118,14 @@ Constructs the object.
 \end{DoxyParams}
 
 
-Definition at line 216 of file lazy\+\_\+matrix.\+h.
+Definition at line 274 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a33321976a3585130b7fc5a5da0735d9c}\label{classlazy__matrix_a33321976a3585130b7fc5a5da0735d9c}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_ab3eaf8b190b2e1d8c51ee31d23f7f38b}\label{classlazy__matrix_ab3eaf8b190b2e1d8c51ee31d23f7f38b}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{n,  }\item[{const std\+::size\+\_\+t \&}]{m,  }\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{n,  }\item[{const std\+::size\+\_\+t \&}]{m,  }\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -138,14 +142,14 @@ Constructs the object.
 \end{DoxyParams}
 
 
-Definition at line 226 of file lazy\+\_\+matrix.\+h.
+Definition at line 284 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a29db22d791029e5d2e0a8d4d7d7857db}\label{classlazy__matrix_a29db22d791029e5d2e0a8d4d7d7857db}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a2c87767de51163379f301de906d6a231}\label{classlazy__matrix_a2c87767de51163379f301de906d6a231}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}{T\+D\+Vec}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lazy__matrix_8h_ab6e3d9072e9f4b56c531bef4d02d2652}{T\+D\+Vec}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -158,14 +162,14 @@ Vector initialization.
 \end{DoxyParams}
 
 
-Definition at line 234 of file lazy\+\_\+matrix.\+h.
+Definition at line 292 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_ab8457360fa70960b71dc2039d0c2e64d}\label{classlazy__matrix_ab8457360fa70960b71dc2039d0c2e64d}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_aec8178a41ca97d895e1e20dbed365d02}\label{classlazy__matrix_aec8178a41ca97d895e1e20dbed365d02}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lazy__matrix_8h_a9421479667ba20cc5361aa756ae056d7}{List}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -178,15 +182,15 @@ Initialization with 2D list.
 \end{DoxyParams}
 
 
-Definition at line 246 of file lazy\+\_\+matrix.\+h.
+Definition at line 312 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_af27fa9d4de82b3b89eae883404a8033d}\label{classlazy__matrix_af27fa9d4de82b3b89eae883404a8033d}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!lazy\_matrix@{lazy\_matrix}}
-\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a7f5897589a5a5dd07ccdf73794e81d95}\label{classlazy__matrix_a7f5897589a5a5dd07ccdf73794e81d95}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!lazy\_matrix@{lazy\_matrix}}
+\index{lazy\_matrix@{lazy\_matrix}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{lazy\_matrix()}{lazy\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 , typename R2 , typename R3 $>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, R3 $>$ \&}]{exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classexpr}{expr}}$<$ R1, R2, R3 $>$ \&}]{exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -208,18 +212,18 @@ Initialization with an expression.
 \end{DoxyTemplParams}
 
 
-Definition at line 263 of file lazy\+\_\+matrix.\+h.
+Definition at line 337 of file lazy\+\_\+matrix.\+h.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classlazy__matrix_a0a6d3ba52a1f25250794e978a4ef11d7}\label{classlazy__matrix_a0a6d3ba52a1f25250794e978a4ef11d7}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator $\ast$@{operator $\ast$}}
-\index{operator $\ast$@{operator $\ast$}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a11954c3e2e8af89ccd5f7ae15e12f40b}\label{classlazy__matrix_a11954c3e2e8af89ccd5f7ae15e12f40b}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -237,15 +241,15 @@ Operator $\ast$ Overloading for Element-\/\+Wise Multiplication.
 \end{DoxyTemplParams}
 
 
-Definition at line 415 of file lazy\+\_\+matrix.\+h.
+Definition at line 505 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a4299662cd5c146c7fd9b92cccf90467c}\label{classlazy__matrix_a4299662cd5c146c7fd9b92cccf90467c}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
-\index{operator $\ast$=@{operator $\ast$=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a130ec9cb8a9d894ab3f017533329ae00}\label{classlazy__matrix_a130ec9cb8a9d894ab3f017533329ae00}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -253,15 +257,15 @@ assignment after element-\/wise multiplication
 
 
 
-Definition at line 422 of file lazy\+\_\+matrix.\+h.
+Definition at line 512 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_ad6086869ba1a16b7995804e8f3d53aff}\label{classlazy__matrix_ad6086869ba1a16b7995804e8f3d53aff}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator\%@{operator\%}}
-\index{operator\%@{operator\%}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a42ed6693e9be89298335f160e0fad5b4}\label{classlazy__matrix_a42ed6693e9be89298335f160e0fad5b4}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator\%()}{operator\%()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator\% (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator\% (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -279,15 +283,15 @@ Operator -\/Overloading for Standard Matrix Multiplication.
 \end{DoxyTemplParams}
 
 
-Definition at line 434 of file lazy\+\_\+matrix.\+h.
+Definition at line 524 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a6bf0976366215515282bea034b863489}\label{classlazy__matrix_a6bf0976366215515282bea034b863489}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator\%=@{operator\%=}}
-\index{operator\%=@{operator\%=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a644e4a74c288602afd6cae4682949ab5}\label{classlazy__matrix_a644e4a74c288602afd6cae4682949ab5}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator\%=@{operator\%=}}
+\index{operator\%=@{operator\%=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator\%=()}{operator\%=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator\%= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator\%= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -295,37 +299,37 @@ assignment after standard matrix multiplication
 
 
 
-Definition at line 441 of file lazy\+\_\+matrix.\+h.
+Definition at line 531 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a6d81b29ae59ada2332c1b16a889e3350}\label{classlazy__matrix_a6d81b29ae59ada2332c1b16a889e3350}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a8d253d7fc183071a524232ad43f5afec}\label{classlazy__matrix_a8d253d7fc183071a524232ad43f5afec}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-const T \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{i,  }\item[{const std\+::size\+\_\+t}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+const T \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{i,  }\item[{const std\+::size\+\_\+t}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Operator () Overloading for getting the (i,j)th element 
 
-Definition at line 280 of file lazy\+\_\+matrix.\+h.
+Definition at line 366 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_ad87bc3cf498acf5480fc0a539c5d3a0a}\label{classlazy__matrix_ad87bc3cf498acf5480fc0a539c5d3a0a}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a43d4b192ebec1e2d246125be883d5a6e}\label{classlazy__matrix_a43d4b192ebec1e2d246125be883d5a6e}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-T\& \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{i,  }\item[{const std\+::size\+\_\+t}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+T\& \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{i,  }\item[{const std\+::size\+\_\+t}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 283 of file lazy\+\_\+matrix.\+h.
+Definition at line 369 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a591fc5b952ef341dcb3a20051fd7aa96}\label{classlazy__matrix_a591fc5b952ef341dcb3a20051fd7aa96}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator+@{operator+}}
-\index{operator+@{operator+}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a7c5d07e16aeeadbd2a40e3abee1c9ca3}\label{classlazy__matrix_a7c5d07e16aeeadbd2a40e3abee1c9ca3}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator+()}{operator+()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -343,15 +347,15 @@ Operator + Overloading for Standard Matrix Addition.
 \end{DoxyTemplParams}
 
 
-Definition at line 359 of file lazy\+\_\+matrix.\+h.
+Definition at line 449 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_ad095e5ee3870ca98a267961e260321ce}\label{classlazy__matrix_ad095e5ee3870ca98a267961e260321ce}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator+=@{operator+=}}
-\index{operator+=@{operator+=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a00cb7c5564344e23ed3c248324993321}\label{classlazy__matrix_a00cb7c5564344e23ed3c248324993321}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -359,15 +363,15 @@ assignment after adding
 
 
 
-Definition at line 366 of file lazy\+\_\+matrix.\+h.
+Definition at line 456 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a04ef62e9f2c4395ad0a9e00a0180df9e}\label{classlazy__matrix_a04ef62e9f2c4395ad0a9e00a0180df9e}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_ac0e4bc6ef87afe7ef9b435f2f33878f3}\label{classlazy__matrix_ac0e4bc6ef87afe7ef9b435f2f33878f3}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -385,15 +389,15 @@ Operator -\/ Overloading for Standard Matrix Subtraction.
 \end{DoxyTemplParams}
 
 
-Definition at line 377 of file lazy\+\_\+matrix.\+h.
+Definition at line 467 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a9b8a37284dfa4be9423322f409b81c63}\label{classlazy__matrix_a9b8a37284dfa4be9423322f409b81c63}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator-\/=@{operator-\/=}}
-\index{operator-\/=@{operator-\/=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a1115dadbd778a1c2c7e8ad1d0c8a3fd1}\label{classlazy__matrix_a1115dadbd778a1c2c7e8ad1d0c8a3fd1}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -401,15 +405,15 @@ assignment after subtracting
 
 
 
-Definition at line 384 of file lazy\+\_\+matrix.\+h.
+Definition at line 474 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_ad63bef3225861a4845772934bed6dfa4}\label{classlazy__matrix_ad63bef3225861a4845772934bed6dfa4}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator/@{operator/}}
-\index{operator/@{operator/}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_ada5c981ceba8ec0bd11afdbcb2c40a09}\label{classlazy__matrix_ada5c981ceba8ec0bd11afdbcb2c40a09}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator/()}{operator/()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -427,15 +431,15 @@ Operator / Overloading for Element-\/\+Wise Division.
 \end{DoxyTemplParams}
 
 
-Definition at line 396 of file lazy\+\_\+matrix.\+h.
+Definition at line 486 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_aa19e114755a98ae28c55cc07e06a3f1e}\label{classlazy__matrix_aa19e114755a98ae28c55cc07e06a3f1e}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator/=@{operator/=}}
-\index{operator/=@{operator/=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_acffaec4e4abdb5984ac65aa0b8675e03}\label{classlazy__matrix_acffaec4e4abdb5984ac65aa0b8675e03}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -443,15 +447,15 @@ assignment after element-\/wise division
 
 
 
-Definition at line 403 of file lazy\+\_\+matrix.\+h.
+Definition at line 493 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a3104aa043b2a46f335aa697834634b7a}\label{classlazy__matrix_a3104aa043b2a46f335aa697834634b7a}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator=@{operator=}}
-\index{operator=@{operator=}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_ad30f653be1460b38c29fdc124d2b3e79}\label{classlazy__matrix_ad30f653be1460b38c29fdc124d2b3e79}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}} \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator= (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -469,15 +473,15 @@ Overloading operator = for a assignment of lazy matrix.
 \end{DoxyTemplParams}
 
 
-Definition at line 310 of file lazy\+\_\+matrix.\+h.
+Definition at line 398 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a757be4c2224a2ecbac0dc49e0a8a486b}\label{classlazy__matrix_a757be4c2224a2ecbac0dc49e0a8a486b}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator==@{operator==}}
-\index{operator==@{operator==}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_aa3ddfb86317cbab26a9c3bb272a2f08f}\label{classlazy__matrix_aa3ddfb86317cbab26a9c3bb272a2f08f}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
 template$<$typename R1 $>$ \\
-bool \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::operator== (\begin{DoxyParamCaption}\item[{const R1 \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -498,14 +502,29 @@ true if eaual else false
 \end{DoxyReturn}
 
 
-Definition at line 337 of file lazy\+\_\+matrix.\+h.
+Definition at line 427 of file lazy\+\_\+matrix.\+h.
 
-\mbox{\Hypertarget{classlazy__matrix_a01de84f2c1dcaff51f2ac1eeee3427c6}\label{classlazy__matrix_a01de84f2c1dcaff51f2ac1eeee3427c6}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!shape@{shape}}
-\index{shape@{shape}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_af88477b2ff394bf5b61b554f3017bf89}\label{classlazy__matrix_af88477b2ff394bf5b61b554f3017bf89}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!pcd\_data@{pcd\_data}}
+\index{pcd\_data@{pcd\_data}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
+\subsubsection{\texorpdfstring{pcd\_data()}{pcd\_data()}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::pcd\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+function for getting processed data i.\+e. member \+\_\+array which is processed under row\+\_\+major or column\+\_\+major; 
+
+
+
+Definition at line 362 of file lazy\+\_\+matrix.\+h.
+
+\mbox{\Hypertarget{classlazy__matrix_a4bcc0da3ca5bf4e297c91d48e5005369}\label{classlazy__matrix_a4bcc0da3ca5bf4e297c91d48e5005369}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!shape@{shape}}
+\index{shape@{shape}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{shape()}{shape()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$\+::shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+decltype(auto) \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$\+::shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -513,17 +532,17 @@ Gives the dimensions of the matrix.
 
 
 
-Definition at line 275 of file lazy\+\_\+matrix.\+h.
+Definition at line 357 of file lazy\+\_\+matrix.\+h.
 
 
 
 \subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classlazy__matrix_a2840b44da6b181bb3dfbdf8ffd104fec}\label{classlazy__matrix_a2840b44da6b181bb3dfbdf8ffd104fec}} 
-\index{lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!lazy\_matrix$<$ T $>$@{lazy\_matrix$<$ T $>$}}
+\mbox{\Hypertarget{classlazy__matrix_a88346f662d7a65addb3240c62dcdd1f9}\label{classlazy__matrix_a88346f662d7a65addb3240c62dcdd1f9}} 
+\index{lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lazy\_matrix$<$ T, ploy $>$@{lazy\_matrix$<$ T, ploy $>$}}
 \subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily template$<$typename T, typename ploy = policy\+::row\+\_\+major$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix}}$<$ T, ploy $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
@@ -531,7 +550,7 @@ Oveloading operator $<$$<$ to use std\+:\+: cout.
 
 
 
-Definition at line 290 of file lazy\+\_\+matrix.\+h.
+Definition at line 376 of file lazy\+\_\+matrix.\+h.
 
 
 

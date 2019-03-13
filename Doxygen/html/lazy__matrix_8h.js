@@ -1,5 +1,7 @@
 var lazy__matrix_8h =
 [
+    [ "row_major", "classpolicy_1_1row__major.html", "classpolicy_1_1row__major" ],
+    [ "column_major", "classpolicy_1_1column__major.html", "classpolicy_1_1column__major" ],
     [ "_add", "struct__add.html", "struct__add" ],
     [ "_sub", "struct__sub.html", "struct__sub" ],
     [ "_ediv", "struct__ediv.html", "struct__ediv" ],

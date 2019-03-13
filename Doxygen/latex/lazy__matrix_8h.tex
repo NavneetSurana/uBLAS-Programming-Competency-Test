@@ -7,6 +7,10 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classpolicy_1_1row__major}{policy\+::row\+\_\+major}}
+\begin{DoxyCompactList}\small\item\em policy that take row as first priority \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classpolicy_1_1column__major}{policy\+::column\+\_\+major}}
+\begin{DoxyCompactList}\small\item\em policy that take column as first priority \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct__add}{\+\_\+add}}
 \begin{DoxyCompactList}\small\item\em Functor for adding corresponding position. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct__sub}{\+\_\+sub}}
@@ -20,11 +24,16 @@ struct \mbox{\hyperlink{struct__emul}{\+\_\+emul}}
 struct \mbox{\hyperlink{struct__smul}{\+\_\+smul}}
 \begin{DoxyCompactList}\small\item\em Functor for multiplying with scalar. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct__std__mul}{\+\_\+std\+\_\+mul}}
-\begin{DoxyCompactList}\small\item\em Functor for getting (i,j)th element of Matrix-\/\+Matrix multiplication. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Functor for getting (i,j)th element of Standard Matrix-\/\+Matrix multiplication. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classexpr}{expr$<$ R1, R2, Op $>$}}
 \begin{DoxyCompactList}\small\item\em Class for expression. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix$<$ T $>$}}
+class \mbox{\hyperlink{classlazy__matrix}{lazy\+\_\+matrix$<$ T, ploy $>$}}
 \begin{DoxyCompactList}\small\item\em Class for lazy matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacepolicy}{policy}}
+\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simple Matrix Library: _tmul&lt; R1, R2 &gt; Class Template Reference</title>
+<title>Simple Matrix Library: policy::column_major Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,6 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simple Matrix Library
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">A simple matrix library that use expression templates and modern concepts of C++ to solve algebric expressions. This project is built for Programming Competency Test under [GSoC2K19][Boost][uBLAS].</div>
   </td>
@@ -67,7 +68,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('class__tmul.html','');});
+$(document).ready(function(){initNavTree('classpolicy_1_1column__major.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -88,95 +89,44 @@ $(document).ready(function(){initNavTree('class__tmul.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class__tmul-members.html">List of all members</a>  </div>
+<a href="classpolicy_1_1column__major-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">_tmul&lt; R1, R2 &gt; Class Template Reference</div>  </div>
+<div class="title">policy::column_major Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>It solves c(i,j)=sum of a(i,k)*b(k,j) over all k &lt; number of rows in b.  
- <a href="class__tmul.html#details">More...</a></p>
+<p>policy that take column as first priority  
+ <a href="classpolicy_1_1column__major.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="lazy__matrix_8h_source.html">lazy_matrix.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95b4c7d2e3184b4ecc40bfac14529764"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__tmul.html#a95b4c7d2e3184b4ecc40bfac14529764">_tmul</a> (const R1 &amp;a, const R2 &amp;b, const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;pk)</td></tr>
-<tr class="separator:a95b4c7d2e3184b4ecc40bfac14529764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea745e3d3569e49fe68d29ca9ad416b"><td class="memItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class__tmul.html#a1ea745e3d3569e49fe68d29ca9ad416b">operator()</a> (const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;i, const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;j) const</td></tr>
-<tr class="separator:a1ea745e3d3569e49fe68d29ca9ad416b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50967f3227d359e7580934667dae30b0"><td class="memTemplParams" colspan="2">template&lt;typename R1 &gt; </td></tr>
+<tr class="memitem:a50967f3227d359e7580934667dae30b0"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpolicy_1_1column__major.html#a50967f3227d359e7580934667dae30b0">operator()</a> (const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;i, const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;j, const R1 &amp;a) const</td></tr>
+<tr class="separator:a50967f3227d359e7580934667dae30b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f273113d234f459e1723679d2064127"><td class="memTemplParams" colspan="2">template&lt;typename R1 &gt; </td></tr>
+<tr class="memitem:a3f273113d234f459e1723679d2064127"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpolicy_1_1column__major.html#a3f273113d234f459e1723679d2064127">operator()</a> (const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;i, const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;j, R1 &amp;a)</td></tr>
+<tr class="separator:a3f273113d234f459e1723679d2064127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename R1, typename R2&gt;<br />
-class _tmul&lt; R1, R2 &gt;</h3>
+<div class="textblock"><p>policy that take column as first priority </p>
 
-<p>It solves c(i,j)=sum of a(i,k)*b(k,j) over all k &lt; number of rows in b. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">R1</td><td>First Parameter </td></tr>
-    <tr><td class="paramname">R2</td><td>can be a matrix or expression </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a95b4c7d2e3184b4ecc40bfac14529764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95b4c7d2e3184b4ecc40bfac14529764">&#9670;&nbsp;</a></span>_tmul()</h2>
+<p class="definition">Definition at line <a class="el" href="lazy__matrix_8h_source.html#l00031">31</a> of file <a class="el" href="lazy__matrix_8h_source.html">lazy_matrix.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a50967f3227d359e7580934667dae30b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50967f3227d359e7580934667dae30b0">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename R1 , typename R2 &gt; </div>
+template&lt;typename R1 &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class__tmul.html">_tmul</a>&lt; R1, R2 &gt;::<a class="el" href="class__tmul.html">_tmul</a> </td>
-          <td>(</td>
-          <td class="paramtype">const R1 &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const R2 &amp;&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>pk</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1ea745e3d3569e49fe68d29ca9ad416b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea745e3d3569e49fe68d29ca9ad416b">&#9670;&nbsp;</a></span>operator()()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename R1 , typename R2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">decltype(auto) <a class="el" href="class__tmul.html">_tmul</a>&lt; R1, R2 &gt;::operator() </td>
+          <td class="memname">decltype(auto) policy::column_major::operator() </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;&#160;</td>
           <td class="paramname"><em>i</em>, </td>
@@ -185,7 +135,13 @@ template&lt;typename R1 , typename R2 &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>j</em>&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const R1 &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,6 +156,54 @@ template&lt;typename R1 , typename R2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lazy__matrix_8h_source.html#l00034">34</a> of file <a class="el" href="lazy__matrix_8h_source.html">lazy_matrix.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f273113d234f459e1723679d2064127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f273113d234f459e1723679d2064127">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename R1 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) policy::column_major::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lazy__matrix_8h.html#acba2745dcfc55b2d05ff45adc6a0a015">sz_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">R1 &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lazy__matrix_8h_source.html#l00038">38</a> of file <a class="el" href="lazy__matrix_8h_source.html">lazy_matrix.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -210,7 +214,7 @@ template&lt;typename R1 , typename R2 &gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class__tmul.html">_tmul</a></li>
+    <li class="navelem"><a class="el" href="namespacepolicy.html">policy</a></li><li class="navelem"><a class="el" href="classpolicy_1_1column__major.html">column_major</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
